@@ -1,0 +1,41 @@
+<div id="box" class="container slide" style="text-align:center;">
+  <h1>Login</h1>
+  <hr>
+<div class="row">
+  <div ng-show="toggleLogin">
+  <br>
+  <p>
+    <button  class="btn btn-primary login-buttons" ng-click="doLoginFb()"><i class="fa fa-facebook"></i> &nbsp; Facebook</button>
+    <button  class="btn btn-danger login-buttons" ng-click="doLoginGoogle()"><i class="fa fa-google"></i> &nbsp; Google</button>
+    <button  class="btn btn-info login-buttons" ng-click="doLoginTwitter()"><i class="fa fa-twitter"></i> &nbsp; Twitter</button>
+  </p>
+</div>
+  <div class="col-sm-6 col-sm-offset-3">
+    <br>
+    <div class="row" ng-show="toggleLogin">
+      <big>or</big><br><br>
+      <button class="btn btn-success login-buttons" ng-show="toggleLogin" ng-click="toggleLogin = false">Email & Password</button>
+    </div>
+    <div ng-hide="toggleLogin" style="margin-top:-15px;">
+      <button id="toggleLoginOptions" class="pull-right" ng-click="toggleLogin=true"><i class="fa fa-close" style="color:black; font-size:21px;"></i></button>
+      <form role="form">
+        <p class="form-group">
+          <input id="loginEmail" required name="email" type="email" ng-model="email" class="form-control"  placeholder="Email" />
+        </p>
+        <p class="form-group">
+          <input id="loginPass" required name="pass" type="password" ng-model="password" class="form-control"  placeholder="Password"/>
+        </p>
+        
+        <p>
+           <button  class="btn logReg" ng-click="loginEmailPass()"><b>Log In</b></button>
+           &nbsp;
+           <button  class="btn logReg" ng-click="registerEmailPass()"><b>Register</b></button> 
+        </p>
+      </form>
+      <p style="color:red"> {{ message }} </p>
+    </div>
+  </div>
+</div>
+<p ng-show="err" class="bg-danger" ng-model="message">{{ message }}</p>
+</div>
+
