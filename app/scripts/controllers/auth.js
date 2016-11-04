@@ -19,7 +19,7 @@ angular.module('tigrisApp')
 	      $scope.user = authData;
 	      
 	      if (!authData) {
-	      	$state.go('portfolio');
+	      	$state.go('login');
 	      } else {
 	      	$state.go('inbox');
 	      }; 
